@@ -1,6 +1,9 @@
-# Installation roadmap
+# z/OS Installation Roadmap
 
-To install Zowe&trade; on z/OS, there are two parts. The first part is the Zowe runtime that consists of three components: Zowe Application Framework, z/OS Explorer Services, and Zowe API Mediation Layer. The second part is the Zowe Cross Memory Server. This is an authorized server application that provides privileged services to Zowe in a secure manner.
+
+To install Zowe&trade; on z/OS, there are two parts. The first part is the Zowe runtime that consists of four components: Zowe Application Framework, z/OS Explorer Services, Zowe API Mediation Layer, and ZSS. The second part is the Zowe Cross Memory Server. This is an authorized server application that provides privileged services to Zowe in a secure manner.
+
+If you want to use Docker, instead follow this related page: [Installing Zowe Server Components using Docker](install-docker.md)
 
 For more information on the Zowe components and how they are used to launch an instance of Zowe, see [Planning the installation](./installandconfig.md#planning-the-installation-of-zowe-z-os-components).
 
@@ -11,7 +14,7 @@ Review the installation diagram and the introduction in this topic to see the ge
   <figcaption></figcaption>
 </figure>
 <map name="home_map1" id="home_map1">
-  <area href="installandconfig.html#planning-the-installation-of-zowe-z-os-components" alt="Plan and prepare for the installation" title="Plan and prepare for the installation" shape="rect" coords="326, 63, 474, 105" />
+  <area href="installandconfig.html#planning-the-installation-of-zowe-server-components" alt="Plan and prepare for the installation" title="Plan and prepare for the installation" shape="rect" coords="326, 63, 474, 105" />
   <area href="systemrequirements.html" alt="Configure system requirements" title="Configure system requirements" shape="rect" coords="318, 183, 467, 224" />
 
   <area href="https://www.zowe.org/download.html" alt="Download Zowe SMP/E build" title="Download the Zowe SMP/E build from zowe.org" shape="rect" coords="131, 308, 304, 348" />
@@ -40,7 +43,7 @@ Review the installation diagram and the introduction in this topic to see the ge
 
 Before you start the installation, review the information on hardware and software requirements and other considerations. See [Planning the installation](installandconfig.md) for details.
 
-## Stage 2: Install the Zowe runtime
+## Stage 2: Install the Zowe z/OS runtime
 
 1. Ensure that the software requirements are met. The prerequisites are described in [System requirements](systemrequirements.md).
 
@@ -67,7 +70,7 @@ Before you start the installation, review the information on hardware and softwa
    
 After successful installation of either a convenience build or an SMP/E build, there will be a zFS folder that contains the unconfigured Zowe runtime `<RUNTIME_DIR>`, a SAMPLIB library `SZWESAMP` that contains sample members, and a load library `SZWEAUTH` that contains load modules. The steps to prepare the z/OS environment to launch Zowe are the same irrespective of the installation method.
 
-## Stage 3: Configure the Zowe runtime
+## Stage 3: Configure the Zowe z/OS runtime
 
 You can configure the Zowe runtime with one of the following methods depending on your needs. 
 - Use JCL and shell scripts

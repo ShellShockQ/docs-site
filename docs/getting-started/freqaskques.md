@@ -115,6 +115,17 @@ Configuration of the components is similar with or without Docker, but the prima
 
 </details>
 
+### Is the Zowe CLI packaged within the Zowe Docker download?
+
+<details class="zowe-faq">
+
+<summary></summary>
+
+Although it is possible to make a Docker image that contains the Zowe CLI, at this time the Docker image referred to in this documentation contains only server components of Zowe.
+In the future, more Zowe content such as the CLI may have Docker as a distribution option. If you are interested in this, be sure to express this to the Zowe community.
+
+</details>
+
 ### How is access security managed on z/OS?
 
 <details class="zowe-faq">
