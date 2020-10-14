@@ -36,15 +36,8 @@ Review the installation diagram and the introduction in this topic to see the ge
 
   <area href="verify-zowe-runtime-install.html" alt="Verify Zowe installation on z/OS" title="Verify Zowe installation on z/OS" shape="rect" coords="224, 1154, 616, 1198" />
 
-<!-- install docker image-->
-<area href="install-docker-image.html" alt="Installing Zowe Docker Image" title="Installing Zowe Docker Image" shape="rect" coords="224, 1175, 616, 1225" />
-
-<!-- configure docker image-->
-<area href="configuring-docker.html" alt="Configuring Docker Container" title="Configuring Docker Container" shape="rect" coords="224, 1250, 616, 1275" />
-
-<!-- run docker-->
-<!--area href="running-docker-container.html" alt="Running Docker Container" title="Running Docker Container" shape="rect" coords="224, 1300, 616, 1350" />
-
+  <area href="install-docker-image.html" alt="Installing Zowe Docker Image" title="Installing Zowe Docker Image" shape="rect" coords="224, 1175, 616, 1225" />
+  <area href="configuring-docker.html" alt="Configuring Docker Container" title="Configuring Docker Container" shape="rect" coords="224, 1250, 616, 1275" />
 
 </map>
 
