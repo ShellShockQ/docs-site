@@ -1,4 +1,4 @@
-# Configuring Zowe runtime Docker Image
+# Configuring Zowe runtime Docker Container
 
 Configuring the Zowe runtime Docker Image has similarities to [configuring runtime instance on z/OS](configure-instance-directory.md), except in a few key ways:
 

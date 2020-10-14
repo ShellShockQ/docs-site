@@ -110,13 +110,17 @@ You can configure the Zowe runtime with one of the following methods depending o
 
 5. Configure and start the `ZWESVSTC` started task. For instructions, see [Installing the Zowe started task (ZWESVSTC)](configure-zowe-server.md). 
 
-## Stage 4: Install Docker
-
-...
-
-## Stage 5: Verify the installation
+## Stage 4: Verify the installation
 
 Verify that Zowe is installed correctly on z/OS. See [Verifying Zowe installation on z/OS](verify-zowe-runtime-install.md).
+
+## Stage 5: Install Docker
+
+Get the latest Docker Image for the Zowe Server Components. See [Installing Zowe runtime Docker Image](install-docker-image.md).
+
+## Stage 6: Configure Docker
+
+Extract and customize the start script, instance directory, and keystore before running a Docker container. See [Configuring Zowe runtime Docker Container](configuring-docker.md)
 
 ## Looking for troubleshooting help?
 
