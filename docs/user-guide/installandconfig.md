@@ -6,7 +6,7 @@ The Zowe server components provide a web desktop that runs in a web browser prov
 
 Zowe CLI can connect to z/OS servers and allows tasks to be performed through a command line interface.
 
-Because Zowe is a set of components, before installing Zowe first determine which components you want to install, and where you want to install them. This guide covers all of the components, but is split into sections so you can install as much as you need.
+Because Zowe is a set of components, before installing Zowe, first determine which components you want to install and where you want to install them. This guide provides documentation for all of the components and it is split into sections so you can install as much as you need.
 
 Here are some scenarios to consider:
 

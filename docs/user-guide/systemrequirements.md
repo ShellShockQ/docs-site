@@ -20,7 +20,7 @@ Before installing Zowe&trade;, ensure that your environment meets the prerequisi
 
 Zowe CLI operates independently of the Zowe z/OS component and is installed on a client PC that runs Windows, Linux, or Mac operating systems.  It can access z/OS endpoints such as z/OSMF, or can access FTP, CICS, DB2, and other z/OS services through plug-ins.  Unless required by plug-ins, the Zowe CLI does not require the Zowe server components to be installed.
 
-All Zowe server components can be installed on a z/OS environment, while some can alternatively be installed on Linux via Docker. The components provide a number of services that are accessed through a web browser such as an API catalog and a web desktop.  The client PC that accesses the Zowe server components does not need to have the Zowe CLI installed.
+All Zowe server components can be installed on a z/OS environment, while some can alternatively be installed on Linux or zLinux via Docker. The components provide a number of services that are accessed through a web browser such as an API catalog and a web desktop.  The client PC that accesses the Zowe server components does not need to have the Zowe CLI installed.
 
 Even though the Zowe server components do not require the CLI and vice-versa, there is an advantage to having the server components if using the CLI. When installed, the API Mediation Layer of Zowe can provide benefits to the CLI such as single-sign-on and only needing to trust a single certificate when using multiple Zowe-related endpoints.
 
@@ -93,7 +93,7 @@ See [Configuring a Zowe instance via instance.env file](../user-guide/configure-
 ## Docker requirements (host)
 
 Docker is a technology for delivering a set of software and all its prerequisites and run them in an isolated manner to reduce installation steps and to eliminate troubleshooting environmental differences.
-Docker can run on many operating systems, but currently the Zowe Docker image is for x86 Linux (Intel, AMD). Support for platforms such as zLinux, zCX, Windows, and more will be added over time.
+Docker can run on many operating systems, but currently the Zowe Docker image is for x86 Linux (Intel, AMD) and zLinux ("s390x"). Support for platforms such as zCX, Windows, and more will be added over time.
 
 To get Docker for Linux, you should check your Linux software repository. Whether using Ubuntu, Red Hat, SuSE, and many other types of Linux, you can install Docker the same way you install other software on Linux through the package manager.
 

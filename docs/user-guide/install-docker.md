@@ -1,11 +1,19 @@
 # Docker Installation Roadmap
 
 
-To install Zowe&trade; using Docker, there are three parts. The first part is the Zowe z/OS runtime which contains the ZSS component. The second part is the Zowe Cross Memory Server. This is an authorized server application that provides privileged services to Zowe in a secure manner. The third part is the Zowe Docker image, which runs on a Linux host. It consists of three components: Zowe Application Framework, z/OS Explorer Services, and Zowe API Mediation Layer. 
+There are three parts to using Docker to install Zowe&trade;.
+
+- The Zowe z/OS runtime which contains the ZSS component.
+
+- The Zowe Cross Memory Server. This is an authorized server application that provides privileged services to Zowe in a secure manner.
+
+- The Zowe Docker image, which runs on a Linux or zLinux host. It consists of three components: Zowe Application Framework, z/OS Explorer Services, and Zowe API Mediation Layer. 
 
 If you want to install all server components on z/OS instead, instead follow this related page: [Installing Zowe Server Components on z/OS](install-zos.md)
 
-Review the installation diagram and the introduction in this topic to see the general installation sequence and the most important tasks that are to be performed during installation and configuration. You can click each step on the diagram for detailed instructions.
+Review the installation diagram and the introduction in this topic to see the general installation sequence and the most important tasks that are to be performed during installation and configuration.
+
+**NOTE**: You can click each step on the diagram for detailed instructions.
 
 <figure>
   <img usemap="#home_map1" border="0" id="install-flow" src="../images/common/zowe-zos-install-diagram.png" width="850" alt="Click each step to get more details on the flow." />
@@ -92,11 +100,7 @@ You can configure the Zowe runtime with one of the following methods depending o
    
    A keystore directory needs to be created for a Zowe instance to be launched successfully, and a keystore directory can be shared between Zowe instances and between Zowe runtimes, including between different Zowe releases, unless specified otherwise in the release documentation.  
 
-3. (Only required for launching the Zowe desktop) Configure and start the `ZWESISTC` cross memory server and install the load libraries. For instructions, see [Installing and configuring the Zowe cross memory server (ZWESISTC)](configure-xmem-server.md).
-
-   The cross memory server is only required if you want to use the Zowe desktop. The cross memory server is not used by API Mediation Layer. If you want to use Zowe API Mediation Layer only, you can skip this step. 
-   
-   Which components of Zowe are started is determined by the `LAUNCH_COMPONENT_GROUPS` value in the `instance.env` file in the Zowe instance directory, see [Creating and configuring the Zowe instance directory](configure-instance-directory.md#component-groups). 
+3. Configure and start the `ZWESISTC` cross memory server and install the load libraries. For instructions, see [Installing and configuring the Zowe cross memory server (ZWESISTC)](configure-xmem-server.md).
 
 4. Create and customize an instance directory that contains configuration data required to launch a Zowe runtime and is where log files are stored. For instructions, see [Creating and configuring the Zowe instance directory](configure-instance-directory.md) and [Configuring Zowe with z/OSMF workflows](configure-zowe-zosmf-workflow.md).
 

@@ -107,11 +107,12 @@ Prerequisites vary by component used, but in most cases the primary prerequisite
 
 <summary></summary>
 
-Docker is a download option for Zowe that allows you to run certain Zowe server components outside of z/OS. It is an alternative to the PAX and SMPE downloads.
-This option is useful for users who do not have adequate access to a z/OS machine, as well as users who have extra capacity off-Z that they want to utilize.
-The Docker image contains server components which do not have a hard requirement of running on z/OS: App server, API Mediation Layer, and the USS/MVS/JES Explorers.
-When using the Docker image, z/OS is still required as depending on which components of Zowe you use, you'll still need to set up z/OS Management Facility as well as Zowe's ZSS and Cross memory servers.
-Configuration of the components is similar with or without Docker, but the primary difference is installation & running as with Docker these tasks are all linux-oriented instead of utilizing Jobs and STCs.
+Docker is a download option for Zowe that allows you to run certain Zowe server components outside of z/OS.
+The Docker image contains the Zowe components that do not have the requirement of having to run on z/OS: The App server, API Mediation Layer, and the USS/MVS/JES Explorers.
+
+Configurating components with Docker is similar to the procedures you would follow without Docker, however tasks such as installation and running with Docker are a bit different, as these tasks become Linux oriented, rather than utilizing Jobs and STCs.
+
+**NOTE:** z/OS is still required when using the Docker image. Depending on which components of Zowe you use, you'll still need to set up z/OS Management Facility as well as Zowe's ZSS and Cross memory servers.
 
 </details>
 
@@ -121,8 +122,9 @@ Configuration of the components is similar with or without Docker, but the prima
 
 <summary></summary>
 
-Although it is possible to make a Docker image that contains the Zowe CLI, at this time the Docker image referred to in this documentation contains only server components of Zowe.
-In the future, more Zowe content such as the CLI may have Docker as a distribution option. If you are interested in this, be sure to express this to the Zowe community.
+At this time, the Docker image referred to in this documentation contains only Zowe server components. It is possible to make a Docker image that contains the Zowe CLI, so additional Zowe content, such as the CLI, may have Docker as a distribution option later. 
+
+If you are interested in improvements such as this one, please be sure to express that interest to the Zowe community!
 
 </details>
 

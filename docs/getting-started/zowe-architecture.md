@@ -8,18 +8,21 @@ The following diagram depicts the high-level Zowe architecture.
 
 The diagram shows the default port numbers that are used by Zowe.  These are dependent on each instance of Zowe and are held in the Zowe instance directory configuration file `instance.env`. For more information, see [Creating and configuring the Zowe instance directory](../user-guide/configure-instance-directory.md).
 
-The components of Zowe can be categorized by location: server or client. While the client is always an end user tool such as a PC, browser or mobile device, the server components can be further categorized by what machine they run on.
-Zowe server components can either be installed and run all on z/OS, many of which running under Unix System Services (USS), or a subset of components can run on Linux or z/Linux via Docker, with a remaining few still running on z/OS to provide connectivity to that mainframe. In this scenario, the same components are used but where they run changes slightly, as depicted in another architecture diagram.
+Zowe components can be categorized by location: server or client. While the client is always an end user tool such as a PC, browser or mobile device, the server components can be further categorized by what machine they run on.
+
+Zowe server components can be installed and run entirely on z/OS, but a subset of the components can alternatively run on Linux or z/Linux via Docker. While on z/OS, many of these components run under Unix System Services (USS). The ones that do not run under USS must remain on z/OS when using Docker in order to provide connectivity to the mainframe.
+
+The following diagram depicts the difference in locations of Zowe components when using Docker as opposed to running all components on z/OS.
 
 <img src="../images/common/zowe-architecture-docker.png" alt="Zowe Architecture Diagram using Docker" width="700px"/> 
 
-The components on z/OS run under the Zowe started task `ZWESVSTC` that has its own user ID `ZWESVUSR` and include a number of servers each with their own address space.  The `ZWESVSTC` started task has a `STDOUT` file that includes log and trace information for its servers.  Sever error messages are written to `STDERR` and for problem determination. See [Troubleshooting](../troubleshoot/troubleshooting.md).
+The components on z/OS run under the Zowe started task `ZWESVSTC`, which has its own user ID `ZWESVUSR` and includes a number of servers each with their own address space.  The `ZWESVSTC` started task has a `STDOUT` file that includes log and trace information for its servers.  Sever error messages are written to `STDERR`. For problem determination, see [Troubleshooting](../troubleshoot/troubleshooting.md).
 
-When Docker is used, server components not running on z/OS instead run in a Linux-like environment provided via the Docker container technology, and the servers run as processes within the container which log to `STDOUT` and `STDERR` of that container, and some components also write to the Zowe instance's log directory.
+When Docker is used, server components not running on z/OS instead run in a Linux environment provided via the Docker container technology. The servers run as processes within the container which log to `STDOUT` and `STDERR` of that container, with some components also write to the Zowe instance's log directory.
 
 ## App Server
 
-The App Server is a node.js server and is the server responsible for the Zowe Application Framework. It provides the Zowe desktop that you can access through a web browser via port 8544. The Zowe desktop includes a number of applications that run inside the Application Framework including a 3270 emulator and a File Editor. 
+The App Server is a node.js server that is responsible for the Zowe Application Framework. It provides the Zowe deskto, which is accessible through a web browser via port 8544. The Zowe desktop includes a number of applications that run inside the Application Framework such as a 3270 emulator and a File Editor. 
 
 <img src="../images/mvd/zowe-desktop.png" alt="Zowe Desktop Diagram" width="600px"/> 
 
@@ -64,6 +67,6 @@ Both the File API and JES API servers are registered as tiles on the API catalog
 ## Cross memory server
 
 The Cross memory server is a low-level privleged server for managing mainframe data securely.
-For security, it is not an HTTP server. Instead it has a trust relationship with ZSS, and other Zowe components can work through ZSS in order to handle z/OS data that would otherwise be unavailable or insecure to access from higher-level languages and software.
+For security reasons, it is not an HTTP server. Instead, it has a trust relationship with ZSS. Other Zowe components can work through ZSS in order to handle z/OS data that would otherwise be unavailable or insecure to access from higher-level languages and software.
 
 Unlike all of the servers described above which run under the `ZWESVSTC` started task as address spaces for USS processes, the cross memory server has its own separate started task `ZWESISTC` and its own user ID `ZWESIUSR` that runs the program `ZWESIS01`. 
